@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import XSvg from "../../../components/svgs/X";
-import DecaturImage from "../../../img/decatur.png";
+import DecaturImage from "../../../img/dice-3x5-black.jpg";
 
 import { MdOutlineMail } from "react-icons/md";
 import { MdPassword } from "react-icons/md";
@@ -65,7 +65,7 @@ const LoginPage = () => {
 				</div>
 				<br /><br />
 				<div>
-					<h2 className='text-4xl font-extrabold text-white' style={{textAlign: 'center'}}>DICE</h2>
+					<h2 className='text-4xl font-extrabold text-white' style={{textAlign: 'center'}}>D.I.C.E.</h2>
 				</div>
 			</div>
 			
