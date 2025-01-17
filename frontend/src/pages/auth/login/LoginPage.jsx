@@ -9,6 +9,8 @@ import { MdPassword } from "react-icons/md";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+const SERVER = import.meta.env.VITE_API_URL
+
 const LoginPage = () => {
 	const [formData, setFormData] = useState({
 		username: "",
@@ -24,7 +26,7 @@ const LoginPage = () => {
 	} = useMutation({
 		mutationFn: async ({ username, password }) => {
 			try {
-				const res = await fetch("/api/auth/login", {
+				const res = await fetch(`${SERVER}/api/auth/login`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

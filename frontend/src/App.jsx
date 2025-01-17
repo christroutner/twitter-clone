@@ -13,13 +13,15 @@ import { Toaster } from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "./components/common/LoadingSpinner";
 
+const SERVER = import.meta.env.VITE_API_URL
+
 function App() {
 	const { data: authUser, isLoading } = useQuery({
 		// we use queryKey to give a unique name to our query and refer to it later
 		queryKey: ["authUser"],
 		queryFn: async () => {
 			try {
-				const res = await fetch("/api/auth/me");
+				const res = await fetch(`${SERVER}/api/auth/me`);
 				const data = await res.json();
 				if (data.error) return null;
 				if (!res.ok) {
