@@ -15,7 +15,9 @@ import LoadingSpinner from "./components/common/LoadingSpinner";
 
 const SERVER = import.meta.env.VITE_API_URL
 
+
 function App() {
+	console.log('SERVER', SERVER)
 	const { data: authUser, isLoading } = useQuery({
 		// we use queryKey to give a unique name to our query and refer to it later
 		queryKey: ["authUser"],

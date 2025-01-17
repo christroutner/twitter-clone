@@ -11,7 +11,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const SERVER = import.meta.env.VITE_API_URL
 
+
 const LoginPage = () => {
+	console.log('SERVER', SERVER)
 	const [formData, setFormData] = useState({
 		username: "",
 		password: "",
@@ -26,6 +28,7 @@ const LoginPage = () => {
 	} = useMutation({
 		mutationFn: async ({ username, password }) => {
 			try {
+				console.log('SERVER', SERVER)
 				const res = await fetch(`${SERVER}/api/auth/login`, {
 					method: "POST",
 					headers: {
